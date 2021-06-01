@@ -242,7 +242,12 @@ def createArticle():
 
     profiler.filterNouns(article)
     articleList = sh.retrieveAllArticles()
-    profiler.rankNouns(article, articleList)
+
+    if len(articleList) == 3:
+        for a in articleList:
+            profiler.rankNouns(a, articleList)
+    elif len(articleList) > 3:
+        profiler.rankNouns(article, articleList)
 
     sh.insertArticle(article)
 
