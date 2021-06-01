@@ -1,9 +1,7 @@
 import json
-import uuid
 
 import mysql.connector
 from .Article import Article
-from .JSONParser import JSONParser
 from .User import User
 
 
@@ -32,8 +30,6 @@ class SqlHandler:
         if self.connected:
             self.createDatabase()
             self.createTables()
-            if not self.isPopulated():
-                self.populateDatabase()
 
 
     def insertArticle(self, article):
@@ -303,30 +299,6 @@ class SqlHandler:
 
         self.conn.commit()
         cur.close()
-
-
-    def populateDatabase(self):
-        print("Populating Database")
-        parser = JSONParser()
-        articles = parser.createArticleFromJson(500)
-
-        for a in articles:
-            self.insertArticle(a)
-        print("Done populating Database")
-
-
-    def isPopulated(self):
-        cur = self.conn.cursor()
-        query = '''SELECT COUNT(id) FROM articles'''
-        cur.execute(query)
-        count = cur.fetchall()
-        cur.close()
-
-        if count[0][0] > 0:
-            return True
-        else:
-            return False
-
 
     def createArticle(self, article):
         if not self.connected:
