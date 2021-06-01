@@ -44,8 +44,9 @@ def getRecommended(user_id=1):
 
         user.sortRecommendedArticles()
 
+        articles_to_show = 10 if len(user.recommendedArticles) > 10 else len(user.recommendedArticles)
 
-        for i in range(0, 10):
+        for i in range(0, articles_to_show):
             article_id = list(user.recommendedArticles)[i]
             recommended.append(sh.retrieveArticle(article_id))
         recommendedArticles = recommended
