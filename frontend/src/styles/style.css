@@ -1,0 +1,54 @@
+.home {
+  padding: 100px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.home .home-articles-list .headline {
+  font-size: 38px;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+
+.home .home-articles-list .article {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.home .home-articles-list .article .title {
+  font-size: 28px;
+  opacity: 0.8;
+  font-family: "Times New Roman", Times, serif;
+}
+.home .home-articles-list .article .excerpt {
+  font-size: 18px;
+}
+
+.recommended-articles-list {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 3px;
+}
+
+.recommended-articles-list .article {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.recommended-articles-list .article .title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.list ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.list ul li {
+  width: 100%;
+  padding: 20px 0;
+}
+.full-width {
+  width: 100%;
+}
